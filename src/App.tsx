@@ -58,13 +58,16 @@ function App() {
           <div className="flex items-center space-x-3">
             <div className="flex items-center justify-center">
               <img src="/Logo-CNE.svg" alt="CNE Logo" />
+
             </div>
           </div>
 
           <button className="bg-[#23B53E] hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-2 cursor-pointer">
-            <div className="text-left font-montserrat">
-              <div className="text-sm font-bold">TABLEROS</div>
-              <div className="text-sm">DINÁMICOS</div>
+            <div className="text-left font-montserrat flex gap-3 items-center">
+              <i className="fas fa-chart-line"></i>
+              <div className="text-sm font-bold grid">TABLEROS
+                 <div className="text-sm font-bold">DINÁMICOS</div>
+              </div>
             </div>
           </button>
         </header>
