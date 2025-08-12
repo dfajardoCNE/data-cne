@@ -1,11 +1,12 @@
-import { 
-  Zap, 
-  Sun, 
-  FileText, 
-  Atom, 
-  Lightbulb, 
-  BarChart3, 
-} from 'lucide-react';
+import {
+  Zap,
+  Sun,
+  FileText,
+  Atom,
+  Lightbulb,
+  BarChart3,
+  ChartLine,
+} from "lucide-react";
 
 function App() {
   const categories = [
@@ -49,39 +50,47 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen bg-[url(/Background-CNE.jpg)] bg-contain relative overflow-hidden">
+      <div className="min-h-screen bg-[url(/Background-CNE.jpg)] bg-cover bg-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.1%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
         </div>
 
-        <header className="relative z-10 flex justify-between items-start p-8">
-          <div className="flex items-center space-x-3">
-            <div className="flex items-center justify-center">
-              <img src="/Logo-CNE.svg" alt="CNE Logo" />
-            </div>
+        <header className="relative z-10 flex flex-col sm:flex-row justify-between items-center gap-4 px-4 sm:px-8 py-6">
+          <div className="flex items-center justify-center">
+            <img
+              src="/Logo-CNE.svg"
+              alt="CNE Logo"
+              className="max-w-[150px] w-full h-auto"
+            />
           </div>
 
-          <button className="bg-[#23B53E] hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-2 cursor-pointer">
-            <div className="text-left font-montserrat">
-              <div className="text-sm font-bold">TABLEROS</div>
-              <div className="text-sm">DINÁMICOS</div>
+          <button className="bg-[#23B53E] hover:bg-green-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-2 cursor-pointer w-full sm:w-auto justify-center">
+            <ChartLine className="w-6 h-6 sm:w-8 sm:h-8" />
+            <div className="w-px h-8 sm:h-10 bg-white"></div>
+            <div className="text-left font-montserrat text-[15px] sm:text-base">
+              <div className="font-light">TABLEROS</div>
+              <div className="font-bold">DINÁMICOS</div>
             </div>
           </button>
         </header>
 
-        <main className="relative z-10 flex flex-col items-center justify-center px-8 py-16">
+        <main className="relative z-10 flex flex-col items-center justify-center px-4 sm:px-8 py-12 sm:py-16">
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-4 mb-4">
-              <img src="/Logo-DataCNE.svg" alt="Data CNE" />
+              <img
+                src="/Logo-DataCNE.svg"
+                alt="Data CNE"
+                className="max-w-[200px] w-full h-auto"
+              />
             </div>
-            <p className="text-white text-lg font-medium font-montserrat">
+            <p className="text-white text-base sm:text-lg font-medium font-montserrat">
               Conectando datos,{" "}
               <span className="font-bold">impulsando energía</span>
             </p>
           </div>
 
-          <div className="text-center max-w-4xl mb-16">
-            <p className="text-white leading-relaxed font-montserrat">
+          <div className="text-center max-w-4xl mb-12 sm:mb-16 px-2">
+            <p className="text-white leading-relaxed font-montserrat text-sm sm:text-base">
               Aquí encontrarás cifras, indicadores y recursos educativos que
               muestran cómo la <span className="font-bold">CNE</span> impulsa el
               desarrollo energético sostenible de la{" "}
@@ -90,26 +99,26 @@ function App() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl w-full">
             {categories.map((category, index) => {
               const IconComponent = category.icon;
               return (
                 <button
                   key={index}
-                  className="bg-white/95 hover:bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group font-montserrat cursor-pointer"
+                  className="bg-white/95 hover:bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group font-montserrat cursor-pointer"
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-3 sm:space-x-4">
                     <div
                       className={`${category.color} transition-transform group-hover:scale-110`}
                     >
-                      <IconComponent className="w-8 h-8" />
+                      <IconComponent className="w-6 h-6 sm:w-8 sm:h-8" />
                     </div>
-                    <div className="w-px h-13 bg-black"></div>
+                    <div className="w-px h-10 bg-black"></div>
                     <div className="text-left">
-                      <div className="text-[#17447A] text-lg font-semibold">
+                      <div className="text-[#17447A] text-base sm:text-lg font-semibold">
                         {category.title}
                       </div>
-                      <div className="text-[#17447A] text-lg font-bold">
+                      <div className="text-[#17447A] text-base sm:text-lg font-bold">
                         {category.subtitle}
                       </div>
                     </div>
