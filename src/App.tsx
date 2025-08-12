@@ -104,7 +104,7 @@ function App() {
                     >
                       <IconComponent className="w-8 h-8" />
                     </div>
-                    <div className="border-r-4 border-b-orange-700"></div>
+                    <div className="w-px h-13 bg-black"></div>
                     <div className="text-left">
                       <div className="text-[#17447A] text-lg font-semibold">
                         {category.title}
